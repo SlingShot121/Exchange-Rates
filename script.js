@@ -1,4 +1,8 @@
 // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    fetchAvailableCurrencies();
+});
+
 function fetchExchangeRate() {
     const apiKey = '78197c7f477d248dc54db6ad';
     const baseCurrency = 'USD';
@@ -10,7 +14,6 @@ function fetchExchangeRate() {
         .then(data => {
             if (data && data.conversion_rates) {
                 const conversionRates = data.conversion_rates;
-                populateCurrencyOptions(conversionRates);
                 if (conversionRates[targetCurrency]) {
                     const exchangeRate = conversionRates[targetCurrency];
                     document.getElementById('exchangeRateInfo').innerText = `1 ${baseCurrency} = ${exchangeRate} ${targetCurrency}`;
@@ -46,24 +49,14 @@ function fetchAvailableCurrencies() {
         });
 }
 
-
 function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
 
-    if (Array.isArray(currencies)) {
-        currencies.forEach(currency => {
-            const option = document.createElement('option');
-            option.value = currency.code;
-            option.text = `${currency.code} - ${currency.name}`;
-            currencySelect.appendChild(option);
-        });
-    } else if (typeof currencies === 'object') {
-        Object.keys(currencies).forEach(currencyCode => {
-            const option = document.createElement('option');
-            option.value = currencyCode;
-            option.text = `${currencyCode} - ${currencies[currencyCode]}`;
-            currencySelect.appendChild(option);
-        });
-    }
+    currencies.forEach(currency => {
+        const option = document.createElement('option');
+        option.value = currency.code;
+        option.text = `${currency.code} - ${currency.name}`;
+        currencySelect.appendChild(option);
+    });
 }
