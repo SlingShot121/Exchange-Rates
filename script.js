@@ -35,7 +35,7 @@ function fetchAvailableCurrencies() {
         .then(response => response.json())
         .then(data => {
             if (data && data.supported_codes) {
-                const supportedCodes = data.supported_codes;
+                const supportedCodes = Object.entries(data.supported_codes).map(([code, name]) => ({ code, name }));
                 populateCurrencyOptions(supportedCodes);
             } else {
                 console.log('Unable to fetch available currencies');
@@ -46,6 +46,7 @@ function fetchAvailableCurrencies() {
         });
 }
 
+
 function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
@@ -53,15 +54,15 @@ function populateCurrencyOptions(currencies) {
     if (Array.isArray(currencies)) {
         currencies.forEach(currency => {
             const option = document.createElement('option');
-            option.value = currency;
-            option.text = currency;
+            option.value = currency.code;
+            option.text = `${currency.code} - ${currency.name}`;
             currencySelect.appendChild(option);
         });
     } else if (typeof currencies === 'object') {
-        Object.keys(currencies).forEach(currency => {
+        Object.keys(currencies).forEach(currencyCode => {
             const option = document.createElement('option');
-            option.value = currency;
-            option.text = currency;
+            option.value = currencyCode;
+            option.text = `${currencyCode} - ${currencies[currencyCode]}`;
             currencySelect.appendChild(option);
         });
     }
