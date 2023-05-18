@@ -9,9 +9,11 @@
         <h1>Exchange Rates</h1>
         <div id="exchangeRate">
             <button onclick="fetchExchangeRate()">Click here for exchange rate</button>
+            <button onclick="fetchAvailableCurrencies()">Fetch Available Currencies</button>
             <select id="currencySelect" onchange="fetchExchangeRate()">
                 <option value="">Select currency</option>
             </select>
+            <p id="exchangeRateInfo"></p>
         </div>
     </div>
 
