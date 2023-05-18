@@ -50,10 +50,19 @@ function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
 
-    currencies.forEach(currency => {
-        const option = document.createElement('option');
-        option.value = currency;
-        option.text = currency;
-        currencySelect.appendChild(option);
-    });
+    if (Array.isArray(currencies)) {
+        currencies.forEach(currency => {
+            const option = document.createElement('option');
+            option.value = currency;
+            option.text = currency;
+            currencySelect.appendChild(option);
+        });
+    } else if (typeof currencies === 'object') {
+        Object.keys(currencies).forEach(currency => {
+            const option = document.createElement('option');
+            option.value = currency;
+            option.text = currency;
+            currencySelect.appendChild(option);
+        });
+    }
 }
