@@ -1,13 +1,13 @@
 // script.js
 function fetchExchangeRate() {
     const apiKey = '78197c7f477d248dc54db6ad';
-    const url = `https://v6.exchangeratesapi.io/latest?base=USD&symbols=ZAR&apiKey=${apiKey}`;
+    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            if (data && data.rates && data.rates.ZAR) {
-                const exchangeRate = data.rates.ZAR;
+            if (data && data.conversion_rates && data.conversion_rates.ZAR) {
+                const exchangeRate = data.conversion_rates.ZAR;
                 document.getElementById('exchangeRate').innerText = `1 USD = ${exchangeRate} ZAR`;
             } else {
                 document.getElementById('exchangeRate').innerText = 'Unable to fetch exchange rate';
