@@ -1,6 +1,6 @@
 // script.js
 function fetchExchangeRate() {
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = '78197c7f477d248dc54db6ad';
     const url = `https://v6.exchangeratesapi.io/latest?base=USD&symbols=ZAR&apiKey=${apiKey}`;
 
     fetch(url)
