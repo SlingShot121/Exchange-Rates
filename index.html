@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exchange Rate Display</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Exchange Rates</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Exchange Rate Display</h1>
+        <h1>Exchange Rates</h1>
         <div id="exchangeRate">
             <button onclick="fetchExchangeRate()">Click here for exchange rate</button>
-        </div>        
+            <select id="currencySelect" onchange="fetchExchangeRate()">
+                <option value="">Select currency</option>
+            </select>
+        </div>
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
