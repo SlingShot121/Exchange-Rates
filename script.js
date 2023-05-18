@@ -1,6 +1,6 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    fetchAvailableCurrencies();
+    fetchExchangeRate();
 });
 
 function fetchExchangeRate() {
@@ -27,25 +27,6 @@ function fetchExchangeRate() {
         .catch(error => {
             console.log('Error fetching exchange rates:', error);
             document.getElementById('exchangeRateInfo').innerText = 'Error fetching exchange rates';
-        });
-}
-
-function fetchAvailableCurrencies() {
-    const apiKey = '78197c7f477d248dc54db6ad';
-    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/codes`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data && data.supported_codes) {
-                const supportedCodes = Object.entries(data.supported_codes).map(([code, name]) => ({ code, name }));
-                populateCurrencyOptions(supportedCodes);
-            } else {
-                console.log('Unable to fetch available currencies');
-            }
-        })
-        .catch(error => {
-            console.log('Error fetching available currencies:', error);
         });
 }
 

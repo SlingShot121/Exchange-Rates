@@ -1,19 +1,18 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exchange Rates</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <h1>Exchange Rates</h1>
     <div class="container">
-        <h1>Exchange Rates</h1>
-        <div class="select-container">
+        <div class="input-group">
+            <label for="currencySelect">Select Currency:</label>
             <select id="currencySelect"></select>
         </div>
-        <div id="exchangeRateInfo" class="exchange-rate-info"></div>
+        <button onclick="fetchExchangeRate()">Get Exchange Rate</button>
+        <div id="exchangeRateInfo" class="result"></div>
     </div>
 
     <script src="script.js"></script>
