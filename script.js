@@ -53,6 +53,7 @@ function fetchAvailableCurrencies() {
 function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
+    console.log(currencies)
 
     Object.keys(currencies).forEach(code => {
         const option = document.createElement('option');
@@ -61,6 +62,3 @@ function populateCurrencyOptions(currencies) {
         currencySelect.appendChild(option);
     });
 }
-
-
-
