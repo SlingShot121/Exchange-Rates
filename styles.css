@@ -47,16 +47,6 @@ select {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Add new styles for arrow */
-.arrow {
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-right: 5px solid #000;
-    margin: 10px;
-}
-
 label {
     flex: 1;
 }
