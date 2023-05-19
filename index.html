@@ -8,8 +8,13 @@
     <h1>Exchange Rates</h1>
     <div class="container">
         <div class="input-group">
-            <label for="currencySelect">Select Currency:</label>
-            <select id="currencySelect"></select>
+            <label for="baseCurrencySelect">Base Currency:</label>
+            <select id="baseCurrencySelect"></select>
+        </div>
+        <div class="arrow"></div>
+        <div class="input-group">
+            <label for="targetCurrencySelect">Target Currency:</label>
+            <select id="targetCurrencySelect"></select>
         </div>
         <button onclick="fetchExchangeRate()">Get Exchange Rate</button>
         <div id="exchangeRateInfo" class="result"></div>

@@ -18,7 +18,10 @@ h1 {
     margin-top: 50px;
 }
 
+/* Update existing styles */
 .input-group {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -42,4 +45,26 @@ select {
     padding: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add new styles for arrow */
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #000;
+    margin: 10px;
+}
+
+label {
+    flex: 1;
+}
+
+select {
+    flex: 2;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
