@@ -53,12 +53,13 @@ function fetchAvailableCurrencies() {
 function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
-    console.log('These are the currencies:', currencies)
-
-    Object.keys(currencies).forEach(code => {
-        const option = document.createElement('option');
-        option.value = code;
-        option.text = code;
-        currencySelect.appendChild(option);
+  
+    currencies.forEach(currency => {
+      const code = currency[0]; // Get the currency code from the first element
+      const option = document.createElement('option');
+      option.value = code;
+      option.text = code;
+      currencySelect.appendChild(option);
     });
-}
+  }
+  
