@@ -54,12 +54,13 @@ function populateCurrencyOptions(currencies) {
     const currencySelect = document.getElementById('currencySelect');
     currencySelect.innerHTML = '';
 
-    Object.entries(currencies).forEach(([code, name]) => {
+    Object.keys(currencies).forEach(code => {
         const option = document.createElement('option');
         option.value = code;
-        option.text = code; // Display only the currency code
+        option.text = code;
         currencySelect.appendChild(option);
     });
 }
+
 
 
