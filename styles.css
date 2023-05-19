@@ -11,6 +11,25 @@ body {
     padding: 20px;
     margin: 50px auto;
     max-width: 400px;
+    text-align: center; /* Center the content horizontally */
+}
+
+.button-container {
+    margin-top: 20px; /* Add some spacing between the button and the currency dropdowns */
+    text-align: center; /* Center the button */
+}
+
+.button-container button {
+    background-color: #444444; /* Darkish grey background color */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px; /* Add some padding around the button */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.button-container button:hover {
+    background-color: #333333; /* Darker background color on hover */
 }
 
 h1 {
